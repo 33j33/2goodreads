@@ -1,0 +1,21 @@
+.star-rating {
+  color: var(--color-text-8);
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+
+  & > span {
+    padding: 3px;
+    font-size: var(--font-size-XL);
+    cursor: pointer;
+
+    &.selected {
+      color: var(--color-text-accent-2);
+    }
+  }
+  span:hover ~ span,
+  span:hover {
+    color: var(--color-text-accent-2);
+    filter: brightness(3);
+  }
+}

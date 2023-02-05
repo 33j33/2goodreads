@@ -22,6 +22,7 @@ section.details {
   button.review {
     grid-area: btn-review;
     justify-self: end;
+    align-self: end;
     margin-right: 10px;
   }
 
@@ -67,6 +68,23 @@ section.reviews {
   }
 }
 
+dialog.add-review {
+  border: none;
+  border-radius: 5px;
+  background-color: var(--color-bg-3);
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px;
+  top: calc(50% - 150px);
+  left: calc(50% - 300px);
+  width: 600px;
+  height: 300px;
+
+  &::backdrop {
+    backdrop-filter: blur(1px);
+  }
+}
+
 @media (max-width: 768px) {
   /* For mobile phones: */
 
@@ -75,5 +93,12 @@ section.reviews {
       "book-image book-image"
       "col-right col-right"
       ". btn-review";
+  }
+
+  dialog.add-review {
+    top: calc(50% - 100px);
+    left: calc(50% - 150px);
+    width: 300px;
+    height: 200px;
   }
 }
