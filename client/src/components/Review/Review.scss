@@ -1,0 +1,21 @@
+.review-wrap {
+  display: flex;
+  gap: 8px;
+  padding: 8px 10px 5px;
+
+  img.reviewer {
+    width: 30px;
+    height: 30px;
+    box-shadow: 0px 0px 0px 1px var(--color-border-2);
+    border-radius: 9999px;
+    transition: box-shadow 300ms ease-in;
+  }
+
+  .review-description {
+    color: var(--color-text-5);
+    font-size: var(--font-size-S);
+  }
+}
+.review-wrap + .review-wrap {
+  border-top: 1px solid var(--color-border-1);
+}

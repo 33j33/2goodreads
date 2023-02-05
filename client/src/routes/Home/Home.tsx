@@ -1,16 +1,13 @@
-import { Link } from "react-router-dom";
 import { getBooks } from "../../api/books";
+import { BookCard } from "../../components";
+import "./Home.scss";
 
 export function Home() {
   const books = getBooks();
   return (
-    <div className="home-wrapper">
+    <div className="book-listing">
       {books.map((book, i) => (
-        <div key={book.id}>
-          <div className="book-title">
-            <Link to={`book/${book.id}`}>{book.name}</Link>
-          </div>
-        </div>
+        <BookCard key={book.id} book={book} />
       ))}
     </div>
   );

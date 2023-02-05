@@ -1,11 +1,13 @@
 const books: Book[] = [
   {
     id: "1",
-    author: "jai",
+    author: "Stephen King",
     name: "booke one",
-    description: "lorem ispum",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum",
     img: "https://cdn.pixabay.com/photo/2022/03/31/14/53/camp-7103189_960_720.png",
-    rating: 0,
+    rating: 1,
+    price: 300,
   },
   {
     id: "2",
@@ -13,7 +15,8 @@ const books: Book[] = [
     name: "book two",
     description: "lorem ispum",
     img: "https://cdn.pixabay.com/photo/2022/03/31/14/53/camp-7103189_960_720.png",
-    rating: 0,
+    rating: 2,
+    price: 300,
   },
   {
     id: "3",
@@ -21,7 +24,8 @@ const books: Book[] = [
     name: "book three",
     description: "lorem ispum",
     img: "https://cdn.pixabay.com/photo/2022/03/31/14/53/camp-7103189_960_720.png",
-    rating: 0,
+    rating: 3.3,
+    price: 300,
   },
 ];
 

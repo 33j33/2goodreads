@@ -1,4 +1,5 @@
 declare module "*.module.scss";
+declare module "*.svg";
 
 type Book = {
   id: string;
@@ -7,4 +8,5 @@ type Book = {
   description: string;
   img: string;
   rating: number;
+  price: number;
 };

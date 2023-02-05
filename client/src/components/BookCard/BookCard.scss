@@ -1,0 +1,82 @@
+.book-card-wrapper {
+  display: flex;
+  padding: 15px 10px;
+  gap: 15px;
+}
+
+.book-card-wrapper + .book-card-wrapper {
+  border-top: 1px solid var(--color-border-1);
+}
+
+.book-image {
+  width: 100px;
+  aspect-ratio: 2/3;
+  box-shadow: 0px 0px 0px 1px var(--color-border-2);
+  border-radius: 3px;
+  transition: box-shadow 300ms ease-in;
+
+  &:hover {
+    box-shadow: 0px 0px 0px 2px var(--color-border-3);
+    cursor: pointer;
+  }
+}
+
+.book-meta {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+
+  .dot {
+    font-size: var(--font-size-2XS);
+    color: var(--color-text-7);
+  }
+}
+
+.book-num-rating {
+  color: var(--color-text-accent-2);
+  font-size: var(--font-size-S);
+  font-weight: 700;
+  margin-left: -3px;
+}
+
+.book-price {
+  color: var(--color-text-accent-1);
+  font-weight: 700;
+}
+
+.col-right {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.book-author {
+  color: var(--color-text-4);
+  font-size: var(--font-size-S);
+}
+
+a.book-title {
+  font-size: var(--font-size-XL);
+  color: var(--color-text-3);
+  text-decoration: transparent;
+  transition: text-decoration 500ms ease-in;
+
+  &:hover {
+    color: var(--color-text-1);
+    text-decoration: underline var(--color-text-1);
+    text-underline-offset: 5px;
+    cursor: pointer;
+  }
+}
+
+.book-description {
+  color: var(--color-text-5);
+  font-size: var(--font-size-R);
+
+  &.crop {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}

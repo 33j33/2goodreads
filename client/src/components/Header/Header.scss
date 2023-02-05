@@ -1,0 +1,41 @@
+.site-header {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  border-bottom: 1px solid var(--color-border-1);
+  padding: 10px;
+  background-color: var(--color-bg-3);
+  position: sticky;
+  top: 0;
+
+  & > .container {
+    display: flex;
+    justify-content: space-between;
+    width: 95%;
+    max-width: 1200px;
+  }
+
+  .title {
+    display: flex;
+    width: 40%;
+    min-width: 60px;
+    align-items: center;
+    gap: 10px;
+
+    svg {
+      width: 60px;
+      min-width: 30px;
+    }
+
+    a {
+      color: var(--color-text-3);
+      text-decoration: none;
+      font-size: var(--font-size-XL);
+      font-weight: 700;
+
+      &:hover {
+        color: var(--color-text-1);
+      }
+    }
+  }
+}

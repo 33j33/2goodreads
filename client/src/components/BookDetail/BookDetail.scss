@@ -1,0 +1,79 @@
+.book-detail-page {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  gap: 25px;
+}
+
+section.details {
+  display: grid;
+  gap: 15px;
+  grid-template-columns: 200px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas:
+    "book-image col-right"
+    "book-image btn-review";
+
+  .col-right {
+    gap: 10px;
+    grid-area: col-right;
+  }
+
+  button.review {
+    grid-area: btn-review;
+    justify-self: end;
+    margin-right: 10px;
+  }
+
+  .book-image {
+    width: 200px;
+    grid-area: book-image;
+  }
+
+  .book-title {
+    color: var(--color-text-2);
+    font-size: var(--font-size-3XL);
+  }
+
+  .book-author {
+    font-size: var(--font-size-R);
+  }
+
+  .g-book-star-rating {
+    font-size: var(--font-size-L);
+  }
+
+  .book-num-rating {
+    font-size: var(--font-size-R);
+  }
+
+  .book-price {
+    font-size: var(--font-size-L);
+  }
+}
+
+section.reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+
+  div.heading {
+    border-bottom: 1px solid var(--color-border-1);
+    color: var(--color-text-4);
+    font-weight: 400;
+    font-size: var(--font-size-L);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+}
+
+@media (max-width: 768px) {
+  /* For mobile phones: */
+
+  section.details {
+    grid-template-areas:
+      "book-image book-image"
+      "col-right col-right"
+      ". btn-review";
+  }
+}
