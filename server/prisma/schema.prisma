@@ -1,0 +1,30 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("MYSQL_CONNECTION_URL")
+}
+
+model Rating {
+  id        String   @id @default(uuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  review    String
+  rating    Int
+  book      Book     @relation(fields: [bookId], references: [id])
+  bookId    String
+}
+
+model Book {
+  id          String   @id @default(uuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  author      String
+  description String
+  price       Int
+  img         String?
+  ratings     Rating[]
+}
