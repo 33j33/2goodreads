@@ -11,7 +11,7 @@ model Rating {
   id        String   @id @default(uuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  review    String
+  review    String   @db.Text()
   rating    Int
   book      Book     @relation(fields: [bookId], references: [id])
   bookId    String
@@ -21,9 +21,9 @@ model Book {
   id          String   @id @default(uuid())
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
-  name        String
+  name        String   @db.Text()
   author      String
-  description String
+  description String   @db.Text()
   price       Int
   img         String?
   ratings     Rating[]
