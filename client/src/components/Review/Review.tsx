@@ -22,11 +22,7 @@ export function Review({ review, rating }: ReviewProps) {
             style={{ "--rating": rating } as React.CSSProperties}
           ></span>
         </div>
-        <div className="review-description">
-          Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-          accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae
-          ab illo inventore.
-        </div>
+        <div className="review-description">{review}</div>
       </div>
     </div>
   );

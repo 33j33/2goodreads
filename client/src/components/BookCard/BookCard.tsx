@@ -9,7 +9,15 @@ export function BookCard({ book }: BookCardProps) {
   return (
     <div className="book-card-wrapper">
       <div className="col-left">
-        <img className="book-image" src={book.img} alt="book" width={80} />
+        <img
+          className="book-image"
+          src={
+            book.img ||
+            "https://cdn.pixabay.com/photo/2022/03/31/14/53/camp-7103189_960_720.png"
+          }
+          alt="book"
+          width={80}
+        />
       </div>
       <div className="col-right">
         <Link className="book-title" to={`book/${book.id}`}>
@@ -21,9 +29,9 @@ export function BookCard({ book }: BookCardProps) {
           <span className="dot">&#x2022;</span>
           <span
             className="g-book-star-rating"
-            style={{ "--rating": book.rating } as React.CSSProperties}
+            style={{ "--rating": book.avgRating } as React.CSSProperties}
           ></span>
-          <span className="book-num-rating">{book.rating}/5</span>
+          <span className="book-num-rating">{book.avgRating.toFixed(1)}/5</span>
         </div>
         <p className="book-description crop">{book.description}</p>
       </div>

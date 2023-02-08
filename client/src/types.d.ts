@@ -7,6 +7,14 @@ type Book = {
   author: string;
   description: string;
   img: string;
-  rating: number;
+  avgRating: number;
   price: number;
+  ratings: Rating[];
+};
+
+type Rating = {
+  id: string;
+  review: string;
+  rating: number;
+  bookId: string;
 };

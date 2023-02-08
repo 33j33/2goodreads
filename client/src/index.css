@@ -24,6 +24,7 @@ html {
 body {
   font-family: "Inter", sans-serif;
   font-weight: 400;
+  color: var(--color-text-3);
 }
 
 :root {
@@ -91,6 +92,26 @@ body {
   -webkit-text-fill-color: transparent;
 }
 
+.g-loader {
+  width: 20px;
+  height: 20px;
+  border: 2px solid currentColor;
+  border-bottom-color: transparent;
+  border-radius: 50%;
+  display: inline-block;
+  box-sizing: border-box;
+  animation: rotation 1s linear infinite;
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 button {
   all: unset;
   color: var(--color-text-accent-2);
@@ -101,8 +122,15 @@ button {
   font-weight: 500;
   cursor: pointer;
   transition: box-shadow 300ms ease-in;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
 }
 
 button:hover {
   box-shadow: 0px 0px 0px 2px var(--color-border-3);
+}
+button:disabled {
+  opacity: 0.6;
+  cursor: default;
 }
