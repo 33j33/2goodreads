@@ -34,9 +34,10 @@
 // export const getBook = (id: string | undefined) =>
 //   books.find((book) => book.id === id);
 
+export const OFFSET = 3;
+
 export const fetchBooks = async (page: number = 0) => {
   try {
-    const OFFSET = 5;
     const take = OFFSET;
     const skip = page * OFFSET;
     const res = await fetch(

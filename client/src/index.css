@@ -69,6 +69,21 @@ body {
   --font-size-2XS: 0.579rem;
 }
 
+@media (max-width: 768px) {
+  :root {
+    --font-size-4XL: 2.488rem;
+    --font-size-3XL: 2.074rem;
+    --font-size-2XL: 1.728rem;
+    --font-size-XL: 1.44rem;
+    --font-size-L: 1.2rem;
+    --font-size-M: 1rem;
+    --font-size-R: 0.833rem;
+    --font-size-S: 0.694rem;
+    --font-size-XS: 0.579rem;
+    --font-size-XS: 0.479rem;
+  }
+}
+
 /* Common classes and elements */
 .g-book-star-rating {
   --percent: calc(var(--rating) / 5 * 100%);
@@ -127,7 +142,7 @@ button {
   gap: 5px;
 }
 
-button:hover {
+button:hover:not(:disabled) {
   box-shadow: 0px 0px 0px 2px var(--color-border-3);
 }
 button:disabled {
