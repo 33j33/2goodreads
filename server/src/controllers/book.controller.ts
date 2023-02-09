@@ -37,19 +37,28 @@ export const getBooks = async (req: Request, res: Response) => {
 
 export const getBookById = async (req: Request, res: Response) => {
   const id = req.params.id;
-  if (!id) {
-    res.sendStatus(400);
-  }
+
   try {
     const book = await prisma.book.findUnique({
       where: {
         id,
       },
+      include: {
+        ratings: {
+          orderBy: {
+            createdAt: "desc",
+          },
+        },
+      },
     });
     if (!book) {
       throw new Error("Not found");
     }
+    const avgRating =
+      book.ratings.reduce((sum, rating) => sum + rating.rating, 0) /
+      book.ratings.length;
+    return res.status(200).json({ ...book, avgRating });
   } catch (error: any) {
-    res.sendStatus(404).json({ msg: error.message });
+    res.status(404).json({ msg: error.message });
   }
 };

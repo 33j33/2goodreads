@@ -13,6 +13,10 @@ app.use(express.json());
 app.use("/books", bookRouter);
 app.use("/ratings", ratingRouter);
 
+app.get("/", async (req, res) => {
+  res.status(200).send("server is running");
+});
+
 const server = app.listen(process.env.PORT, () =>
   console.log(`Server ready at: http://localhost:${process.env.PORT}`)
 );
