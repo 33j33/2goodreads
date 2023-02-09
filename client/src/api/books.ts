@@ -53,6 +53,20 @@ export const fetchBooks = async (page: number = 0) => {
   }
 };
 
+export const fetchBook = async (id: string): Promise<Book> => {
+  try {
+    const res = await fetch(`${process.env.REACT_APP_API_URL}/books/${id}`);
+    if (!res.ok) {
+      throw new Error("Something went wrong");
+    }
+    const book = (await res.json()) as Book;
+    return book;
+  } catch (err) {
+    console.log(err);
+    throw new Error("Something went wrong");
+  }
+};
+
 export const createRating = async ({
   review,
   rating,

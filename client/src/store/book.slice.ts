@@ -4,7 +4,7 @@ import {
   PayloadAction,
   ThunkAction,
 } from "@reduxjs/toolkit";
-import { createRating, fetchBooks } from "../api/books";
+import { createRating, fetchBook, fetchBooks } from "../api/books";
 import { RootState } from "./store";
 
 export const bookSlice = createSlice({
@@ -42,6 +42,18 @@ export const getBooks =
       const books = await fetchBooks(page);
       dispatch(addBooks(books));
       return books;
+    } catch (err: any) {
+      throw new Error(err?.message);
+    }
+  };
+
+export const getBook =
+  (id: string): ThunkAction<Promise<Book>, RootState, unknown, AnyAction> =>
+  async (dispatch): Promise<Book> => {
+    try {
+      const book = await fetchBook(id);
+      dispatch(addBooks(book));
+      return book;
     } catch (err: any) {
       throw new Error(err?.message);
     }
