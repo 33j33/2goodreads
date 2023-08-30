@@ -1,8 +1,73 @@
 # 2goodreads
 
-book listing and reviews
+book listing and reviews 
 
-demo-url - https://2goooodreads.netlify.app/
+## Tech Stack
+
+uses `prisma`, `mysql`, `express` on the server and `react`, `react-router`, `redux-toolkit`, `sass`
+
+### API Specs
+
+Absolutely, here are the API specifications in markdown format:
+
+### Get All Books
+
+- **Endpoint:** `GET /books`
+- **Description:** Get a list of all books with average ratings.
+- **Response:**
+  - **Status:** 200 OK
+  - **Body:** An array of book objects, each containing book details and average rating.
+
+### Get Book by ID
+
+- **Endpoint:** `GET /books/:id`
+- **Description:** Get detailed information about a specific book including its average rating.
+- **Parameters:**
+  - `id` (number): The ID of the book to retrieve.
+- **Response:**
+  - **Status:** 200 OK
+  - **Body:** Book details including average rating.
+
+### Create Rating for a Book
+
+- **Endpoint:** `POST /ratings`
+- **Description:** Create a new rating and review for a book.
+- **Request Body:**
+  - `review` (string): The review text.
+  - `rating` (number): The rating value (1-5).
+  - `bookId` (number): The ID of the book being rated.
+- **Response:**
+  - **Status:** 201 Created
+  - **Body:** The rating object.
+
+### DB schema
+
+```
+Table Rating {
+  id        UUID        [primary key]
+  createdAt DateTime   [default: `now()`, not null]
+  updatedAt DateTime   [not null]
+  review    Text
+  rating    Int
+  bookId    UUID
+  foreign key (bookId) references Book(id)
+}
+
+Table Book {
+  id          UUID        [primary key]
+  createdAt   DateTime   [default: `now()`, not null]
+  updatedAt   DateTime   [not null]
+  name        Text
+  author      Text
+  description Text
+  price       Int
+  img         Text?
+}
+
+Ref: Rating.bookId > Book.id
+```
+
+
 
 ## Getting Started
 
