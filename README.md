@@ -4,11 +4,9 @@ book listing and reviews
 
 ## Tech Stack
 
-uses `prisma`, `mysql`, `express` on the server and `react`, `react-router`, `redux-toolkit`, `sass`
+uses `prisma`, `mysql`, `express` on the server and `react`, `react-router`, `redux-toolkit`, `sass` on client
 
-### API Specs
-
-Absolutely, here are the API specifications in markdown format:
+## API Specs
 
 ### Get All Books
 
